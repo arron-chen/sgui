@@ -1,6 +1,6 @@
 <template>
   <div style="display:inline-block;">
-    <canvas width="250" height="250" style="display: none"></canvas>
+    <canvas width="150" height="150" style="display: none"></canvas>
     <img :src="isrc" :width="cWidth" :height="cHeight" >
   </div>
 </template>
@@ -34,11 +34,11 @@
         return o;
       },
       cWidth(){
-        var c=this.iWidth ? this.iWidth :250;
+        var c=this.iWidth ? this.iWidth :150;
         return c;
       },
       cHeight(){
-        var c=this.iHeight ? this.iHeight :250;
+        var c=this.iHeight ? this.iHeight :150;
         return c;
       }
     },
@@ -47,17 +47,17 @@
         var canvas = document.querySelector('canvas');
         var context = canvas.getContext('2d');
         var obj={
-          radius:110,//印章半径
-          fontN:'22px Helvetica',//名称字体样式
-          fontC:'28px Helvetica',//单位字体样式
+          radius:70,//印章半径
+          fontN:'14px Helvetica',//名称字体样式
+          fontC:'18px Helvetica',//单位字体样式
           starColor:'',//五角星图标颜色
-          starRadius:50,//五角星半径
+          starRadius:30,//五角星半径
         }
 
         // 绘制印章边框
         var width=canvas.width/2;
         var height=canvas.height/2;
-        context.lineWidth=7;
+        context.lineWidth=5;
         context.strokeStyle="#f00";
         context.beginPath();
         context.arc(width,height,obj.radius,0,Math.PI*2);
@@ -72,7 +72,7 @@
         context.textAlign = 'center'; //设置文本的水平对对齐方式
         context.lineWidth=1;
         context.fillStyle = '#f00';
-        context.fillText(name,width,height+65);
+        context.fillText(name,width,height+45);
 
         // 绘制印章单位
         context.translate(width,height);// 平移到此位置,
@@ -90,7 +90,7 @@
             context.rotate(angle);
           }
           context.save();
-          context.translate(90, 0);// 平移到此位置,此时字和x轴垂直
+          context.translate(60, 0);// 平移到此位置,此时字和x轴垂直 **
           context.rotate(Math.PI/2);// 旋转90度,让字平行于x轴
           context.fillText(c,0, 5);// 此点为字的中心点
           context.restore();
