@@ -46,13 +46,13 @@
               <td>iWidth</td>
               <td>印章宽度</td>
               <td>Number</td>
-              <td>250</td>
+              <td>150</td>
             </tr>
             <tr>
               <td>iHeight</td>
               <td>印章高度</td>
               <td>String</td>
-              <td>250</td>
+              <td>150</td>
             </tr>
             <tr>
               <td>name</td>
